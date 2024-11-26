@@ -347,13 +347,38 @@
         .project-info-footer div {
             border-radius: 10px;
         }
+        @media (max-width: 768px) {
+            .post-block {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .custom-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .post-page > .post-content-container, .post-content, .project-info {
+                padding: 0 10px;
+            }
+            .post-page > .post-content-container > .post-title, .project-info h1 {
+                font-size: 26px;
+            }
+            .post-page > .post-content-container > .post-content p, .post-content {
+                font-size: 16px;
+            }
+            .element-b {
+                font-size: 18px;
+            }
+            .element-v {
+                font-size: 14px;
+            }
+        }
 
         .sm {
             margin: 10px 0;
             text-align: center;
         }
     </style>
-    <main>
+    <main class="post-page">
         <img class="image-header" src="images/example.jpeg">
 
         <div class="post-content-container">
