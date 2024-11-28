@@ -358,7 +358,7 @@
             }
             .post-page > .post-content-container, .post-content, .project-info {
                 padding: 0 10px;
-            }
+            } 
             .post-page > .post-content-container > .post-title, .project-info h1 {
                 font-size: 26px;
             }
@@ -389,8 +389,134 @@
                 <p>3D Design Bureau has collaborated and continues to work on multiple phases of Seven Mills. For this phase, we partnered with the design team to produce a range of planning solutions. These included accurate verified view montages, aerial photomontages, and architectural computer-generated images, showcasing not only the residential units but also the public amenities and office structures.</p>
             </div>
         </div>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <style>
+.swiper-container {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-        <div class="sm">Carusel staff</div>
+.swiper-wrapper {
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5; /* Боковые изображения менее яркие */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1); /* Увеличение центрального изображения */
+  opacity: 1;
+}
+
+.carousel-image {
+  width: 90%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.swiper-slide-active .carousel-image:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.custom-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.prev-button,
+.next-button {
+  background-color: #fff;
+  opacity: 0.5;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #F5F5F5;
+  opacity: 1;
+}
+
+.swiper-pagination {
+  display: flex;
+  gap: 20px;
+  position: static;
+  width: fit-content !important;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet {
+  background: gray;
+  opacity: 0.7;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  transition: background-color 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background: #830C1A;
+  opacity: 1;
+}
+.swiper-right {
+    width: 9px;
+    height: 9px;
+}
+.left-arr {
+    transform: rotate(180deg);
+}
+
+
+    
+        </style>
+        <div class="sm">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/example-car.png" alt="Image 1" class="carousel-image" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/example-car.png" alt="Image 2" class="carousel-image" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/example-car.png" alt="Image 3" class="carousel-image" />
+                    </div>
+                </div>
+            </div>
+            <div class="custom-navigation">
+                <button class="prev-button">
+                    <img class="swiper-right left-arr" src="images/right-arrow.png">    
+                    Previous
+                </button>
+                <div class="swiper-pagination"></div>
+                <button class="next-button">
+                    Next
+                    <img class="swiper-right" src="images/right-arrow.png">
+                    </button>
+            </div>    
+        </div>
         <div class="post-content post-footer">These visual solutions were submitted to the planning authority as part of the planning application, assisting them in making an informed decision about the development.</div>
 
         <div class="project-info">
@@ -511,6 +637,36 @@
 
         </main>
         <script type="text/javascript" src="js/jquery-3.7.0.min.js" id="jquery-js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            const images = document.querySelectorAll('.swiper-slide');
+if (images.length < 4) {
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  images.forEach((slide) => {
+    const clone = slide.cloneNode(true); 
+    swiperWrapper.appendChild(clone);   
+  });
+}
+
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.5, // Центральный слайд виден полностью, боковые частично
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true, // Дотсы кликабельные
+    },
+  });
+
+  document.querySelector('.prev-button').addEventListener('click', () => {
+    swiper.slidePrev(); // Переключение на предыдущий слайд
+  });
+
+  document.querySelector('.next-button').addEventListener('click', () => {
+    swiper.slideNext(); // Переключение на следующий слайд
+  });
+</script>
 <script>
     $(document).ready(function () {
     $('.post-block').on('click', function () {
