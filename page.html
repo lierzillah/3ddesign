@@ -213,6 +213,8 @@
             padding: 10px;
             font-weight: 600;
             cursor: pointer;
+            width: 300px;
+            text-align: center;
         }
         .header-drop {
             color: #000;
@@ -318,7 +320,6 @@
         .project-info h1 {
             font-weight: 700;
             font-size: 36px;
-
         }
         .project-info-container {
             justify-content: space-between;
@@ -374,12 +375,30 @@
             .d3-post-footer {
                 padding: 0 10px;
             }
+            .project-info-footer {  
+                flex-direction: column;
+            }
         }
 
         .sm {
             margin: 10px 0;
             text-align: center;
         }
+        .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+    .swiper-slide, .swiper-container {
+        height: 200px !important;
+    }
+  .swiper-slide img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
     </style>
     <main class="post-page">
         <img class="image-header" src="images/example.jpeg">
@@ -513,7 +532,7 @@
                         <img src="images/example-car.png" alt="Image 1" class="carousel-image" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/example.jpeg" alt="Image 2" class="carousel-image" />
+                        <img src="images/16-example.avif" alt="Image 2" class="carousel-image" />
                     </div>
                     <div class="swiper-slide">
                         <img src="images/example-car.png" alt="Image 3" class="carousel-image" />
@@ -533,7 +552,9 @@
             </div>    
         </div>
         <div class="post-content d3-post-footer">These visual solutions were submitted to the planning authority as part of the planning application, assisting them in making an informed decision about the development.</div>
-
+        <div class="post-content d3-post-footer">
+        <img src="images/example-2.png">
+        </div>
         <div class="project-info">
             <h1>Project info</h1>
             <hr>
