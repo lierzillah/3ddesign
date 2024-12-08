@@ -308,7 +308,7 @@
         .post-content p {
             margin: 20px 0;
         }
-        .post-footer {
+        .d3-post-footer {
             padding: 0 300px;
             margin: 50px 0;
         }
@@ -356,7 +356,7 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            .post-page > .post-content-container, .post-content, .project-info {
+            .post-page > .post-content-container, .project-info {
                 padding: 0 10px;
             } 
             .post-page > .post-content-container > .post-title, .project-info h1 {
@@ -370,6 +370,9 @@
             }
             .element-v {
                 font-size: 14px;
+            }
+            .d3-post-footer {
+                padding: 0 10px;
             }
         }
 
@@ -487,6 +490,18 @@
 .left-arr {
     transform: rotate(180deg);
 }
+.swiper-slide img {
+  transform: none !important;
+  transition: none !important;
+}
+
+.swiper-slide img:hover {
+  transform: none !important;
+  transition: none !important;
+}
+.header-btn:hover {
+    opacity: 0.7;
+}
 
 
     
@@ -498,7 +513,7 @@
                         <img src="images/example-car.png" alt="Image 1" class="carousel-image" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/example-car.png" alt="Image 2" class="carousel-image" />
+                        <img src="images/example.jpeg" alt="Image 2" class="carousel-image" />
                     </div>
                     <div class="swiper-slide">
                         <img src="images/example-car.png" alt="Image 3" class="carousel-image" />
@@ -517,7 +532,7 @@
                     </button>
             </div>    
         </div>
-        <div class="post-content post-footer">These visual solutions were submitted to the planning authority as part of the planning application, assisting them in making an informed decision about the development.</div>
+        <div class="post-content d3-post-footer">These visual solutions were submitted to the planning authority as part of the planning application, assisting them in making an informed decision about the development.</div>
 
         <div class="project-info">
             <h1>Project info</h1>
@@ -666,6 +681,7 @@ if (images.length < 4) {
   document.querySelector('.next-button').addEventListener('click', () => {
     swiper.slideNext(); // Переключение на следующий слайд
   });
+  
 </script>
 <script>
     $(document).ready(function () {
